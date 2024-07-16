@@ -60,7 +60,7 @@ class FutureContractSpec(CompoundScalar, ExprClass, UnitConversionContext):
     quotation_unit: Unit
     tick_size: Quantity[float]
 
-    unit_conversion_factors: tuple[Quantity[float]] = lambda self: self.underlying.unit_conversion_factors + (
+    unit_conversion_factors: tuple[Quantity[float], ...] = lambda self: self.underlying.unit_conversion_factors + (
         self.contract_size / (1.0 * U.lot),
     )
 
@@ -126,4 +126,4 @@ class Future(Instrument):
     first_trading_date: date = SELF.series.first_trading_date(CONTRACT_BASE_DATE=SELF.contract_base_date)
     last_trading_date: date = SELF.series.last_trading_date(CONTRACT_BASE_DATE=SELF.contract_base_date)
 
-    unit_conversion_factors: tuple[Quantity[float]] = SELF.series.spec.unit_conversion_factors
+    unit_conversion_factors: tuple[Quantity[float], ...] = SELF.series.spec.unit_conversion_factors
