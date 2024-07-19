@@ -69,7 +69,7 @@ class FutureContractSpec(CompoundScalar, ExprClass, UnitConversionContext):
 class FutureContractSeries(CompoundScalar, ExprClass, UnitConversionContext):
     SELF: "FutureContractSeries" = SELF
     """
-    A series of future contracts.
+    A series of future contracts
     """
 
     spec: FutureContractSpec
@@ -108,8 +108,10 @@ class Future(Instrument):
     SELF: "Future" = SELF
 
     """
-    A standardized legal agreement to buy or sell the underlyer at a predetermined price at a specific time in the
-    future.
+    A standardized legal agreement to buy or sell the underlying asset or instrument
+    - at a predetermined price 
+    - to be delivered at a specific time, or time range.
+    - on a specific exchange
     """
 
     series: FutureContractSeries

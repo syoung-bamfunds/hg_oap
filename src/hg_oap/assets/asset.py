@@ -22,12 +22,12 @@ class PhysicalAsset(Asset):
     """
     A tangible thing, for example: raw materials, infrastructure, equipment, etc.
 
-    The physical asset has a default unit - for example, copper is often measured in metric tonnes.
-    TODO - is the default unit the size or price unit? e.g. MWh is price unit vs MW is contract size unit
-        Does it make any sense to have it here?
-    The actual traded unit can vary according to the contract - copper can be traded in pounds as well as tonnes.
-    The unit conversion factors can be used to convert between units of different dimensions -
-    e.g. density for mass/volume
+    The physical asset has a default unit - for example, copper is often measured in metric tonnes, electricity in
+    MWh.  The contract size could be measured in a different unit - for example, electricity could be priced as MW
+    over a period rather than a fixed quantity of MWh.
+
+    The actual traded unit can also vary according to the contract - copper could be traded in pounds as well as tonnes.
+    The unit conversion factors can be used to convert between units of different dimensions.
     """
 
     name: str
